@@ -1,0 +1,42 @@
+<html>
+<head>
+
+<script src="./core-min.js"></script>
+<script src="./enc-base64-min.js"></script>
+<script src="./hmac-sha256.js"></script>
+<script src="./json2.js"></script>
+
+<script src="miner.js"></script>
+
+<script>
+
+var miner = new Miner();
+
+</script>
+
+</head>
+
+<body style="font-family: sans-serif;">
+<h1>JSMiner for LTC</h1>
+<p>This proof of concept uses poolers JMiner codebase and ports it to Javascript. For demonstration purposes the data is hard coded in the 'work.js' file but by uncommenting the ajax call and adjusting the proxy.php file to point to your stratum server it can be run live. I did this to quickly overcome the cross-domain scripting issues - i.e. port 3333 is different from port 80 so javascript will throw a cross-domain exception if you try to make an ajax call to it.</p>
+
+<p>Once the file is adjusted you can click on start to start hashing. It will update the hashrate, total hashes and display the latest hash every 200 hashes. I haven't run it long enough to actually find a share but I did confirm that the hashes match those of JMiner when the same data is fed so it seems to be working fine. The code to submit shares was not tested simply because I never ran the application long enough to find a share but it's there.</p>
+
+<button type="button" onClick="miner.startWorker(); return false;">Start</button>
+<button type="button" onClick="miner.stopWorker(); return false;">Terminate</button>
+
+<br/>
+
+<h2>Hash Rate: <input style="border: 1px solid #555555; padding: .5em; font-size: 1.2em; text-align: right; width: 4em;" type="text" id="hashRate" value="0"/> hashes per second</h2>
+<h2>Total Hashes: <input style="border: 1px solid #555555; padding: .5em; font-size: 1.2em; text-align: right; width: 4em;" type="text" id="workerHashes" value="0"/> hashes</h2>
+
+<h2>Log</h2>
+<div style="overflow-y: scroll; padding: .25em; border: 1px solid #999999; height: 200px">
+<pre id="log">
+</pre>
+</div>
+
+
+</body>
+
+</html>
