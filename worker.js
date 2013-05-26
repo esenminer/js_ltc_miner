@@ -1,9 +1,9 @@
 importScripts('./work.js');
 importScripts('./hasher.js');
-importScripts('./lib/core-min.js');
-importScripts('./lib/enc-base64-min.js');
-importScripts('./lib/hmac-sha256.js');
-importScripts('./lib/json2.js');
+importScripts('./core-min.js');
+importScripts('./enc-base64-min.js');
+importScripts('./hmac-sha256.js');
+importScripts('./json2.js');
 
 var WORK_TIMEOUT = 60 * 1000; // ms
 
@@ -101,7 +101,7 @@ function doWork() {
 
 	while(running) {
 		
-		if(curWork == null || curWork.getAge() >= WORK_TIMEOUT ) {
+		if(curWork == null ) {
 			
 			// Get New Work
 			curWork = new Work();
