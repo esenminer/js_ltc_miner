@@ -14,3 +14,7 @@ I didn't port over every function from the JMiner codebase only those enough to 
 For those interested I made use of HTML5 workers to get the code hashing in the background and it communicates with the main javascript through messages. The only problem I ran into is that the worker threads hogs all the CPU resources and doesn't yield when a request is made - for example stop. My only attempt to get the worker to yield was to replace the while(running) { } loop with a setTimeout(work(), xxxx) but that hurt the hashrate alot.
 
 Take it easy on me re: code style / coding etc...just a quick hack to get it hashing so I can see what could be expected.
+
+If you find this useful please feel free to donate:
+
+LTC: LRt1KkirdbiBf3vPQR3tEQZQrVxPAA9Bb4
