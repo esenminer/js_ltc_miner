@@ -3,7 +3,7 @@ js_ltc_miner
 
 A proof-of-concept LTC miner in javascript.
 
-This proof of concept uses poolers JMiner codebase and ports it to Javascript. For demonstration purposes the data is hard coded in the 'work.js' file but by uncommenting the ajax call and adjusting the proxy.php file to point to your stratum server it can be run live. I did this to quickly overcome the cross-domain scripting issues - i.e. port 3333 is different from port 80 so javascript will throw a cross-domain exception if you try to make an ajax call to it.
+This proof of concept uses poolers JMiner codebase (https://github.com/pooler/JMiner) and ports it to Javascript. For demonstration purposes the data is hard coded in the 'work.js' file but by uncommenting the ajax call and adjusting the proxy.php file to point to your stratum server it can be run live. I did this to quickly overcome the cross-domain scripting issues - i.e. port 3333 is different from port 80 so javascript will throw a cross-domain exception if you try to make an ajax call to it.
 
 Copy all the files into a web accessible directory and load the 'index.html' file then click on start to start hashing. It will update the hashrate, total hashes and display the latest hash every 200 hashes. I haven't run it long enough to actually find a share but I did confirm that the hashes match those of JMiner when the same data is fed so it seems to be working fine. The code to submit shares was not tested simply because I never ran the application long enough to find a share but it's there.
 
